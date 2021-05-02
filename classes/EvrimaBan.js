@@ -18,6 +18,4 @@ class EvrimaBan {
   }
 }
 
-module.exports = {
-  EvrimaBan,
-};
+exports.EvrimaBan = EvrimaBan;

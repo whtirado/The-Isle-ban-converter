@@ -1,26 +1,7 @@
 const fs = require('fs');
+const EvrimaBan = require('./classes/EvrimaBan').EvrimaBan;
 
-class EvrimaBan {
-  constructor(
-    steamId,
-    playerName,
-    banReason,
-    bannedTime,
-    endBanTime,
-    bannerName,
-    bannerSteamId
-  ) {
-    this.steamId = steamId;
-    this.playerName = playerName;
-    this.banReason = banReason;
-    this.bannedTime = bannedTime;
-    this.endBanTime = endBanTime;
-    this.bannerName = bannerName;
-    this.bannerSteamId = bannerSteamId;
-  }
-}
-
-// ban files
+// ban files from directory
 let files = [];
 
 // evrima ban file container

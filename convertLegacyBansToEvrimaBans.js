@@ -23,12 +23,12 @@ const getFileData = (fileName, fileData) => {
     bans.bannedPlayerData.push(
       new EvrimaBan(
         steamID,
-        'Imported Legacy Ban',
+        'Legacy Ban',
         banData.Reason,
         banData.DateBanned,
-        '0',
-        'Imported Legacy Ban',
-        'Imported Legacy Ban'
+        '0001.01.01-00.00.00',
+        'NotGnome',
+        'Legacy Ban'
       )
     );
   }

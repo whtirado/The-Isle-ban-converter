@@ -1,0 +1,11 @@
+{
+  "name": "legacy-to-evrima-converter",
+  "version": "1.0.0",
+  "description": "Converts legacy bans to evrima bans",
+  "main": "convertLegacyBansToEvrimaBans.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Tirado",
+  "license": "ISC"
+}

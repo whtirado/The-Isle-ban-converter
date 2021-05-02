@@ -1,5 +1,5 @@
 const fs = require('fs');
-const EvrimaBan = require('./classes/EvrimaBan').EvrimaBan;
+const { EvrimaBan } = require('./classes/EvrimaBan');
 
 // ban files from directory
 let files = [];
@@ -35,7 +35,7 @@ const getFileData = (fileName, fileData) => {
 };
 
 const writeBansToFile = () => {
-  fs.writeFileSync('./PlayerBans.json', JSON.stringify(bans), {
+  fs.writeFileSync('./PlayerBans.json', JSON.stringify(bans, null, 2), {
     encoding: 'utf-8',
   });
 };

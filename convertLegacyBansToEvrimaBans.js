@@ -11,6 +11,8 @@ const bans = {
 
 const banDirectory = './legacyBans/Bans';
 
+const banOutputFile = './PlayerBans.json';
+
 const getFileData = (fileName, fileData) => {
   if (fileName && fileData) {
     // get player steam id from file name
@@ -35,22 +37,30 @@ const getFileData = (fileName, fileData) => {
 };
 
 const writeBansToFile = () => {
-  fs.writeFileSync('./PlayerBans.json', JSON.stringify(bans, null, 2), {
+  fs.writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
     encoding: 'utf-8',
   });
+
+  console.log(`Process completed, files writen to ${banOutputFile}`);
 };
 
 const readBanDirectory = () => {
+  console.log('Reading ban directory...');
+
   files = fs.readdirSync(banDirectory);
 };
 
 const readEachFile = () => {
+  console.log('Reading ban files...');
+
   files.forEach((file) => {
     if (file) {
       const fileContents = fs.readFileSync(`${banDirectory}/${file}`, 'utf-8');
       getFileData(file, fileContents);
     }
   });
+
+  console.log('Done reading ban files...');
 };
 
 readBanDirectory();

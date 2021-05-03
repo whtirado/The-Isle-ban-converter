@@ -1,5 +1,4 @@
 # Ignore ban directories
-legacyBans
-
-# Igonre out file
-PlayerBans.json
+legacyBans/*
+legacyBans/bans/*
+evrimaBans/*

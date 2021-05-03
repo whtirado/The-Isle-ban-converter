@@ -2,9 +2,8 @@
   "name": "legacy-to-evrima-converter",
   "version": "1.0.0",
   "description": "Converts legacy bans to evrima bans",
-  "main": "convertLegacyBansToEvrimaBans.js",
   "scripts": {
-    "lte": "node convertLegacyBansToEvrimaBans.js",
+    "lte": "node src/convertLegacyBansToEvrimaBans.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "William Tirado",

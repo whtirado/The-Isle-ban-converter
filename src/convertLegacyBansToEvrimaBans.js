@@ -1,6 +1,6 @@
 const { readdirSync, readFileSync, writeFileSync } = require('fs');
-const { EvrimaBan } = require('./classes/EvrimaBan');
-const { Message } = require('./classes/Mesasge');
+const { EvrimaBan } = require('../classes/EvrimaBan');
+const { Message } = require('../classes/Mesasge');
 
 // ban files from directory
 let files = [];
@@ -10,12 +10,12 @@ const bans = {
   bannedPlayerData: [],
 };
 
-const banDirectory = './legacyBans/Bans';
+const banDirectory = `./legacyBans`;
 
-const banOutputFile = './PlayerBans.json';
+const banOutputFile = './evrimaBans/PlayerBans.json';
 
 const getFileData = (fileName, fileData) => {
-  if (fileName && fileData) {
+  if (fileName && fileName.endsWith('.json') && fileData) {
     // get player steam id from file name
     const steamID = fileName.split('.')[0];
 

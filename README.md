@@ -11,7 +11,7 @@ _Coverts "The Isle" legacy bans to Evrima bans and vice versa_
 
 ## Setting up file structure
 
-- Run command _npm run mkdir_
+- Run command _"npm run mkdir"_
 - This will create 2 directories _"./legacyBans"_ & _"./evrimaBans"_
 - Unzip/Extract files into _"/legacyBans"_
 - _"/legacyBans"_ should only contain all legacy ban (_steamID.json_) files

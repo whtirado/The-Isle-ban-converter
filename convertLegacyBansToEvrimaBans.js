@@ -69,11 +69,15 @@ const readEachFile = () => {
 
 const writeBansToFile = () => {
   if (bans.bannedPlayerData.length) {
-    writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
-      encoding: 'utf-8',
-    });
+    try {
+      writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
+        encoding: 'utf-8',
+      });
 
-    Message.success(`Ban file has been created: (${banOutputFile})`);
+      Message.success(`Ban file has been created: (${banOutputFile})`);
+    } catch (err) {
+      Message.error(`Failed to write file: (${banOutputFile})`);
+    }
   } else {
     Message.warn(`File not updated: (${banOutputFile})`);
   }

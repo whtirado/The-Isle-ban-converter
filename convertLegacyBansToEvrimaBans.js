@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { EvrimaBan } = require('./classes/EvrimaBan');
+const { Message } = require('./classes/Mesasge');
 
 // ban files from directory
 let files = [];
@@ -36,35 +37,55 @@ const getFileData = (fileName, fileData) => {
   }
 };
 
-const writeBansToFile = () => {
-  fs.writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
-    encoding: 'utf-8',
-  });
-
-  console.log(`Process completed, files writen to ${banOutputFile}`);
-};
-
 const readBanDirectory = () => {
-  console.log('Reading ban directory...');
+  Message.log(`Reading ban directory: (${banDirectory})`);
 
-  files = fs.readdirSync(banDirectory);
+  try {
+    files = fs.readdirSync(banDirectory);
+  } catch (err) {
+    Message.error(`Directory not found: (${banDirectory})`);
+  }
 };
 
 const readEachFile = () => {
-  console.log('Reading ban files...');
+  if (files.length) {
+    Message.log(`Reading ban files: (${banDirectory})`);
 
-  files.forEach((file) => {
-    if (file) {
-      const fileContents = fs.readFileSync(`${banDirectory}/${file}`, 'utf-8');
-      getFileData(file, fileContents);
-    }
-  });
+    files.forEach((file) => {
+      if (file) {
+        try {
+          const fileContents = fs.readFileSync(
+            `${banDirectory}/${file}`,
+            'utf-8'
+          );
 
-  console.log('Done reading ban files...');
+          getFileData(file, fileContents);
+        } catch (err) {}
+      }
+    });
+
+    Message.log(`Done reading files: (${banDirectory})`);
+  } else {
+    Message.warn(`No ban files found in directory: (${banDirectory})`);
+  }
 };
 
-readBanDirectory();
+const writeBansToFile = () => {
+  if (bans.bannedPlayerData.length) {
+    fs.writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
+      encoding: 'utf-8',
+    });
 
-readEachFile();
+    Message.success(`Ban file has been created: (${banOutputFile})`);
+  } else {
+    Message.warn(`File not updated: (${banOutputFile})`);
+  }
+};
 
-writeBansToFile();
+const runScript = () => {
+  readBanDirectory();
+  readEachFile();
+  writeBansToFile();
+};
+
+runScript();

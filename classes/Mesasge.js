@@ -3,6 +3,12 @@ class Message {
     console.log(text);
   }
 
+  static header(text) {
+    console.log('');
+    console.warn('\x1b[36m', text, '\x1b[0m');
+    console.log('');
+  }
+
   static success(text) {
     console.warn('\x1b[32m', text, '\x1b[0m');
   }
@@ -13,6 +19,10 @@ class Message {
 
   static error(text) {
     console.error('\x1b[31m', text, '\x1b[0m');
+  }
+
+  static divider() {
+    console.log('---------------------------------------------------');
   }
 }
 

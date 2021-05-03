@@ -38,10 +38,12 @@ const getFileData = (fileName, fileData) => {
 };
 
 const readBanDirectory = () => {
-  Message.log(`Reading ban directory: (${banDirectory})`);
-
   try {
+    Message.log(`Reading ban directory: (${banDirectory})`);
+
     files = readdirSync(banDirectory);
+
+    Message.success(`Successfully read directory: (${banDirectory})`);
   } catch (err) {
     Message.error(`Directory not found: (${banDirectory})`);
   }
@@ -61,7 +63,7 @@ const readEachFile = () => {
       }
     });
 
-    Message.log(`Done reading files: (${banDirectory})`);
+    Message.success(`Successfully read files: (${banDirectory})`);
   } else {
     Message.warn(`No ban files found in directory: (${banDirectory})`);
   }
@@ -70,23 +72,30 @@ const readEachFile = () => {
 const writeBansToFile = () => {
   if (bans.bannedPlayerData.length) {
     try {
+      Message.log(`Writing to file: (${banOutputFile})`);
+
       writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
         encoding: 'utf-8',
       });
 
-      Message.success(`Ban file has been created: (${banOutputFile})`);
+      Message.success(`Successfully created file: (${banOutputFile})`);
     } catch (err) {
       Message.error(`Failed to write file: (${banOutputFile})`);
     }
   } else {
-    Message.warn(`File not updated: (${banOutputFile})`);
+    Message.warn(`File not updated/created: (${banOutputFile})`);
   }
 };
 
 const runScript = () => {
+  Message.header('Running: Legacy to Evrima converter');
+
   readBanDirectory();
   readEachFile();
   writeBansToFile();
+
+  Message.header('Done: Legacy to Evrima converter');
+  Message.divider();
 };
 
 runScript();

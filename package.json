@@ -4,7 +4,7 @@
   "description": "Converts legacy bans to evrima bans",
   "scripts": {
     "mkdir": "node src/createDirectories.js",
-    "lte": "node src/convertLegacyBansToEvrimaBans.js"
+    "lte": "node src/createDirectories.js && node src/convertLegacyBansToEvrimaBans.js"
   },
   "author": "William Tirado",
   "license": "ISC"

@@ -94,8 +94,9 @@ const runScript = () => {
   readEachFile();
   writeBansToFile();
 
-  Message.header('Done: Legacy to Evrima converter');
   Message.divider();
 };
 
 runScript();
+
+exports.convertLegacyToEvrima = runScript;

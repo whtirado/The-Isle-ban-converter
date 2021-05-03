@@ -29,7 +29,7 @@ const makeDirectories = () => {
 };
 
 const runScript = () => {
-  Message.header('Creating Ban Directories');
+  Message.header('Checking Ban Directories');
   makeDirectories();
   Message.divider();
 };

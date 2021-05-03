@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { readdirSync, readFileSync, writeFileSync } = require('fs');
 const { EvrimaBan } = require('./classes/EvrimaBan');
 const { Message } = require('./classes/Mesasge');
 
@@ -41,7 +41,7 @@ const readBanDirectory = () => {
   Message.log(`Reading ban directory: (${banDirectory})`);
 
   try {
-    files = fs.readdirSync(banDirectory);
+    files = readdirSync(banDirectory);
   } catch (err) {
     Message.error(`Directory not found: (${banDirectory})`);
   }
@@ -54,10 +54,7 @@ const readEachFile = () => {
     files.forEach((file) => {
       if (file) {
         try {
-          const fileContents = fs.readFileSync(
-            `${banDirectory}/${file}`,
-            'utf-8'
-          );
+          const fileContents = readFileSync(`${banDirectory}/${file}`, 'utf-8');
 
           getFileData(file, fileContents);
         } catch (err) {}
@@ -72,7 +69,7 @@ const readEachFile = () => {
 
 const writeBansToFile = () => {
   if (bans.bannedPlayerData.length) {
-    fs.writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
+    writeFileSync(banOutputFile, JSON.stringify(bans, null, 2), {
       encoding: 'utf-8',
     });
 

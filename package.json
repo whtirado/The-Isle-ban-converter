@@ -1,10 +1,10 @@
 {
-  "name": "legacy-to-evrima-converter",
+  "name": "the-isle-ban-converter",
   "version": "1.0.0",
   "description": "Converts legacy bans to evrima bans",
   "scripts": {
-    "lte": "node src/convertLegacyBansToEvrimaBans.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mkdir": "node src/createDirectories.js",
+    "lte": "node src/convertLegacyBansToEvrimaBans.js"
   },
   "author": "William Tirado",
   "license": "ISC"

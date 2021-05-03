@@ -11,14 +11,15 @@ _Coverts "The Isle" legacy bans to Evrima bans and vice versa_
 
 ## Setting up file structure
 
-- Create the following directory structure in the root directory _"/legacyBans/Bans"_
-- Unzip/Extract files into _"/legacyBans/Bans"_
-- _"/legacyBans/Bans"_ should only contain all legacy ban (_steamID.json_) files
+- Run command _npm run mkdir_
+- This will create 2 directories _"./legacyBans"_ & _"./evrimaBans"_
+- Unzip/Extract files into _"/legacyBans"_
+- _"/legacyBans"_ should only contain all legacy ban (_steamID.json_) files
 
 ## Running commands
 
 - Run the following command _"npm run lte"_ (Legacy to Evrima)
-- This will create a _"PlayerBans.json"_ file in the root directory
+- This will create a _"PlayerBans.json"_ file in _"./evrimaBans"_
 
 ## Uploading file to Evrima
 

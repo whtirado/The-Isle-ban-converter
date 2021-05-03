@@ -4,11 +4,11 @@ _Coverts "The Isle" legacy bans to Evrima bans and vice versa_
 
 ## Getting ban files
 
-_Download/Copy ban files from server files (most likely in .zip format)_
+- _Download/Copy ban files from server files (most likely in .zip format)_
 
 ## Setting up file structure
 
-- Create a the following directory structure in the root directory _"/legacyBans/Bans"_
+- Create the following directory structure in the root directory _"/legacyBans/Bans"_
 - Unzip/Extract files into _"/legacyBans/Bans"_
 - _"/legacyBans/Bans"_ should only contain all legacy ban (_steamID.json_) files
 

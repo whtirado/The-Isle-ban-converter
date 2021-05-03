@@ -2,7 +2,7 @@ const { readdirSync, readFileSync, writeFileSync } = require('fs');
 const { EvrimaBan } = require('../classes/EvrimaBan');
 const { Message } = require('../classes/Mesasge');
 
-// Testing argv
+// Testing argvs
 
 // ban files from directory
 let files = [];

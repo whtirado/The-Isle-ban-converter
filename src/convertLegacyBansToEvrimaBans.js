@@ -98,5 +98,3 @@ const runScript = () => {
 };
 
 runScript();
-
-exports.convertLegacyToEvrima = runScript;

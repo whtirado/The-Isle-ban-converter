@@ -23,7 +23,7 @@ _Coverts "The Isle" legacy bans to Evrima bans and vice versa_
 
 ## Uploading file to Evrima
 
-- upload _"PlayerBans.json"_ into _TheIsle/Saved/PlayerData_
+- upload _"PlayerBans.json"_ from _"./evrimaBans"_ into server folder _TheIsle/Saved/PlayerData_
 
 ## Upcomming features
 

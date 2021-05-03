@@ -5,6 +5,7 @@ const legacyBansDirectory = './legacyBans';
 const evrimaBansDirectory = './EvrimaBans';
 
 const makeDirectories = () => {
+  // Create legacy ban directory
   try {
     if (!existsSync(legacyBansDirectory)) {
       mkdirSync(legacyBansDirectory);
@@ -16,6 +17,7 @@ const makeDirectories = () => {
     Message.error(`Failed to created: ${legacyBansDirectory}`);
   }
 
+  // Create evrima ban directory
   try {
     if (!existsSync(evrimaBansDirectory)) {
       mkdirSync(evrimaBansDirectory);

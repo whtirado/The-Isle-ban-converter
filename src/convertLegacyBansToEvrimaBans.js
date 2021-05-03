@@ -2,15 +2,6 @@ const { readdirSync, readFileSync, writeFileSync } = require('fs');
 const { EvrimaBan } = require('../classes/EvrimaBan');
 const { Message } = require('../classes/Mesasge');
 
-// TESTING SCRIPT FLAGS -- bannerName="NotGnome Tirado" bannerId="1234567890"
-// [
-//   'C:\\Program Files\\nodejs\\node.exe',
-//   'F:\\Isle Scripts\\The-Isle-ban-converter\\src\\convertLegacyBansToEvrimaBans.js',
-//   'bname=NotGnome Tirado',
-//   'bid=1234567890'
-// ]
-// console.log('flags', process.argv);
-
 // ban files from directory
 let files = [];
 

@@ -4,6 +4,9 @@ _Coverts "The Isle" legacy bans to Evrima bans and vice versa_
 
 ## Getting ban files
 
+- Go to File Manager option on server
+- Ban files are located in _TheIsle/Saved/Databases/Bans_
+- Click on the _"Create Zip"_ option
 - _Download/Copy ban files from server files (most likely in .zip format)_
 
 ## Setting up file structure

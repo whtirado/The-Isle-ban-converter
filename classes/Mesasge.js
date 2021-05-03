@@ -1,6 +1,6 @@
 class Message {
   static log(text) {
-    console.log(text);
+    console.warn('\x1b[34m', text, '\x1b[0m');
   }
 
   static header(text) {

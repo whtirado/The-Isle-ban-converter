@@ -52,7 +52,7 @@ const getBanData = (ban) => {
 
 const createLegacyBan = (fileName, legacyBanData) => {
   try {
-    writeFileSync(`${outputDirectory}/${fileName}`, legacyBanData, null, 2, {
+    writeFileSync(`${outputDirectory}/${fileName}`, legacyBanData, {
       encoding: 'utf-8',
     });
 
